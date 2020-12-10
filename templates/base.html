@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <title>{% block title %}Weather Me{% endblock %}</title>
+</head>
+<body>
+<div class="wrapper">
+  <!-- Landing -->
+  <header>
+      <nav id="navbar">
+        <div class="container">
+          <h1 class="logo">
+            <a href="/">Weather Me</a>
+          </h1>
+          <ul>
+            <li>
+              {%  if session['user_id']%}
+              <a href="/logout">Logout @{{user.username}}</a>
+            </li>
+            <li>
+              {% else %}
+              <a href="/register" class="current">Sign up</a>
+            </li>
+            <li>
+              <a href="/login">Login</a>
+              {% endif %}
+            </li>
+          </ul>
+        </div>
+      </nav>
+{% block content %} {% endblock %}
+<!-- Footer -->
+<div class="clr"></div>
+</div>
+<footer id="main-footer">
+  <p>Weather Me &copy; 2020, All RIghts Reserved</p>
+</footer>
+
+</body>
+</html>
