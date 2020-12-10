@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from forms import RegisterForm, LoginForm
 from models import db, connect_db, User, City
+import os
 
 
 app = Flask(__name__)
@@ -17,7 +18,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres:///weather_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
-app.config['SECRET_KEY'] = "oh so secret"
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'shhcherrybomb1')
 toolbar = DebugToolbarExtension(app)
 
 connect_db(app)
