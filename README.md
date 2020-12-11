@@ -9,4 +9,4 @@ A user is able to signup then be logged in to access the weather query. They the
 
 
 # Link To View App Live
-[Check it Out!!(https://weather-me-city.herokuapp.com/)]
+https://weather-me-city.herokuapp.com/
